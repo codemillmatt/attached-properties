@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:AttachedProperties" 
+		x:Class="AttachedProperties.AttachedPropertiesPage"
+		Title="Attached Properties!">
+	<ContentPage.BindingContext>
+		<local:TheViewModel />
+	</ContentPage.BindingContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+	
+	<Editor Grid.Row="0" local:EditorAttached.CompletedCommand="{Binding FinishEditing}" />
+	<Label Text="{Binding Status}" Grid.Row="1" />
+	</Grid>
+</ContentPage>

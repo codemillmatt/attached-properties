@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:AttachedProperties"
+		x:Class="AttachedProperties.LabelShadowPage" 
+		Title="Shadows">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style TargetType="Label" x:Key="shadow">
+				<Setter>
+					<Setter.Property>local:ShadowAttachedProperties.HasShadow</Setter.Property>
+					<Setter.Value>true</Setter.Value>
+				</Setter>
+				<Setter>
+					<Setter.Property>local:ShadowAttachedProperties.ShadowColor</Setter.Property>
+					<Setter.Value>Red</Setter.Value>
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Label Text="This will have a shadow" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Style="{StaticResource shadow}" />
+			<Label Text="This will not" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" />
+		</Grid>			
+	</ContentPage.Content>
+</ContentPage>
